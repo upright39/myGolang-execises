@@ -113,7 +113,7 @@ func main() {
 
 	// quantities := []float64{1.2, 3.6, 10.5}
 
-	// myScaleRecipe := execises7.ScaleRecipe(quantities, 4)
+	// execises7.ScaleRecipe(quantities, 4)
 
 	// fmt.Println(myScaleRecipe)
 

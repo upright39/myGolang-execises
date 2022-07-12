@@ -76,15 +76,15 @@ func AddSecreteIngredient() {
 
 }
 
-func ScaleRecipe(Quantities []float64, numPortions int) []float64 {
+// func ScaleRecipe(Quantities []float64, numPortions int) {
 
-	for _, Quant := range Quantities {
+// 	for _, Quant := range Quantities {
 
-		Quant := float64(Quant * float64(numPortions/2))
+// 		Quant = Quant * float64(numPortions/2)
 
-	}
-	Quant
-}
+// 	}
+// 	fmt.Printf("%.2f", Quant)
+// }
 
 // func ScaleRecipe(Quantities []float64, numPortions int) []float64 {
 
