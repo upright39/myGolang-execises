@@ -78,14 +78,20 @@ func AddSecreteIngredient() {
 
 func ScaleRecipe(Quantities []float64, numPortions int) []float64 {
 
-	if len(Quantities) > 0 {
+	for _, Quant := range Quantities {
 
-		for _, Quant := range Quantities {
+		Quant := float64(Quant * float64(numPortions/2))
 
-			Quant += Quant * float64(numPortions/2)
-
-		}
-		return Quant
 	}
-
+	Quant
 }
+
+// func ScaleRecipe(Quantities []float64, numPortions int) []float64 {
+
+// 	for i := 0; i < len(Quantities); i++ {
+
+// 		Quantities[i] - 9
+
+// 	}
+
+// }
