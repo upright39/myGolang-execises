@@ -107,8 +107,15 @@ func main() {
 	eachNoodles, eachSauce := execises7.Quantities([]string{"sauce", "noodles", "sauce", "meat", "mozzarella", "noodles"})
 
 	fmt.Printf("%v , %.1f\n", eachNoodles, eachSauce)
-
+	fmt.Println("..........................................")
 	execises7.AddSecreteIngredient()
+	fmt.Println("..........................................")
+
+	quantities := []float64{1.2, 3.6, 10.5}
+
+	myScaleRecipe := execises7.ScaleRecipe(quantities, 4)
+
+	fmt.Println(myScaleRecipe)
 
 	fmt.Println("''''''''''''''''''''''''''EXE 7 ENDS'''''''''''''''''''''''''''''''''''''''''''''''''''")
 
