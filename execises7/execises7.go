@@ -22,7 +22,7 @@ func Quantities(myLasanga []string) (int, float64) {
 	var initialNoodleContaner []string
 	var initialSauceContaner []string
 
-	// for i := 0; i < len(myLasanga); i++ {
+	// for i :=  0; i < len(myLasanga); i++ {
 
 	// 	if myLasanga[i] == "noodles" {
 	// 		nuberOfNoodlesInLasanga := append(initialNoodleContaner, myLasanga[i])

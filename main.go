@@ -4,11 +4,14 @@ package main
 import (
 	"fmt"
 	"myExecises/execises1"
+	"myExecises/execises10"
 	"myExecises/execises2"
 	"myExecises/execises3"
 	"myExecises/execises4"
 	"myExecises/execises6"
 	"myExecises/execises7"
+	"myExecises/execises8"
+	"myExecises/execises9"
 )
 
 func main() {
@@ -119,4 +122,54 @@ func main() {
 
 	fmt.Println("''''''''''''''''''''''''''EXE 7 ENDS'''''''''''''''''''''''''''''''''''''''''''''''''''")
 
+	fmt.Println("''''''''''''''''''''''''''EXE 8 STARTS'''''''''''''''''''''''''''''''''''''''''''''''''''")
+
+	var myString = "🏃recommended search product 👎"
+
+	fmt.Println(execises8.Application(myString))
+
+	fmt.Println(".............................................................")
+
+	log := "please replace '👎' with '👍'"
+
+	myReplace := execises8.Replace(log, '👎', '👍')
+
+	fmt.Printf("please replace '%c' with '%c' \n", myReplace, myReplace)
+
+	fmt.Println(".............................................................")
+
+	IsWithinLimit := execises8.WithinLimit("hello🏃", 6)
+
+	fmt.Printf("%v\n", IsWithinLimit)
+
+	fmt.Println("''''''''''''''''''''''''''EXE 8 ENDS'''''''''''''''''''''''''''''''''''''''''''''''''''")
+	fmt.Println("''''''''''''''''''''''''''EXE 9 STARTS'''''''''''''''''''''''''''''''''''''''''''''''''''")
+
+	execises9.Schedule("07/20/1990 13:45:00")
+
+	fmt.Println("..............................................................")
+
+	execises9.HasPassed("July 25, 2019 13:45:00")
+	fmt.Println("..............................................................")
+	execises9.IsAfternoonAppointment("Thursday, July 25, 2019 13:45:00")
+	fmt.Println("..............................................................")
+
+	execises9.Description("07/25/2019 13:45:00")
+
+	fmt.Println("..............................................................")
+	MyAniversary := execises9.AniversaryDate()
+	fmt.Println(MyAniversary)
+	fmt.Println("''''''''''''''''''''''''''EXE 9 ENDS'''''''''''''''''''''''''''''''''''''''''''''''''''")
+	fmt.Println("''''''''''''''''''''''''''EXE 10 STARTS'''''''''''''''''''''''''''''''''''''''''''''''''''")
+	execises10.FavouriteCards()
+	fmt.Println("..............................................................")
+
+	myItems := execises10.GetItem([]int{1, 2, 4, 1}, -2)
+	fmt.Println(myItems)
+
+	fmt.Println("..............................................................")
+
+	myNewItem := execises10.SetItem([]int{1, 2, 4, 1}, 2, 6)
+
+	fmt.Println(myNewItem)
 }
