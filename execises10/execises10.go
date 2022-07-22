@@ -42,19 +42,46 @@ func SetItem(myItems []int, Index, newCard int) []int {
 		if i == Index {
 			myItems[i] = newCard
 		}
+		if -Index == i {
+			myItems = append(myItems, newCard)
+
+		}
+	}
+
+	if Index > len(myItems)-1 {
+
+		myItems = append(myItems, newCard)
 
 	}
 	return myItems
 }
 
-// func SetItems(myItems []int, Index, newCard int) []int {
+func PrependItems(slice []int, index, Card int) []int {
 
-// 	for i := range myItems {
+	if index == 0 && Card == 0 {
+		return slice
+	} else {
 
-// 		if i > Index {
-// 			myItems = append(myItems, newCard)
+		slice = append([]int{index, Card}, slice...)
+	}
 
-// 		}
-// 	}
-// 	return myItems
-// }
+	return slice
+
+}
+
+func RemoveItem(items []int, index int) []int {
+
+	for i := range items {
+
+		if i == index {
+
+			return append(items[:index], items[index+1:]...)
+
+		}
+		if index > len(items)-1 {
+			return items
+		}
+
+	}
+	return items
+}

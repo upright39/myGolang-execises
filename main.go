@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"myExecises/execises1"
 	"myExecises/execises10"
+	"myExecises/execises11"
+	"myExecises/execises12"
 	"myExecises/execises2"
 	"myExecises/execises3"
 	"myExecises/execises4"
@@ -160,16 +162,95 @@ func main() {
 	MyAniversary := execises9.AniversaryDate()
 	fmt.Println(MyAniversary)
 	fmt.Println("''''''''''''''''''''''''''EXE 9 ENDS'''''''''''''''''''''''''''''''''''''''''''''''''''")
+
 	fmt.Println("''''''''''''''''''''''''''EXE 10 STARTS'''''''''''''''''''''''''''''''''''''''''''''''''''")
 	execises10.FavouriteCards()
 	fmt.Println("..............................................................")
 
-	myItems := execises10.GetItem([]int{1, 2, 4, 1}, -2)
+	myItems := execises10.GetItem([]int{1, 2, 4, 1}, 3)
 	fmt.Println(myItems)
 
 	fmt.Println("..............................................................")
 
-	myNewItem := execises10.SetItem([]int{1, 2, 4, 1}, 2, 6)
+	myNewItem := execises10.SetItem([]int{1, 2, 4, 1}, 7, 6)
 
 	fmt.Println(myNewItem)
+	fmt.Println("..............................................................")
+
+	Prepend := execises10.PrependItems([]int{3, 2, 6, 4, 8}, 3, 4)
+	fmt.Println(Prepend)
+	fmt.Println("..............................................................")
+
+	removeItem := execises10.RemoveItem([]int{3, 2, 6, 4, 8}, 11)
+	fmt.Println(removeItem)
+	fmt.Println("''''''''''''''''''''''''''EXE 10 ENDS'''''''''''''''''''''''''''''''''''''''''''''''''''")
+
+	fmt.Println("''''''''''''''''''''''''''EXE 11 STARTS'''''''''''''''''''''''''''''''''''''''''''''''''''")
+
+	units := execises11.Unit()
+	fmt.Println(units)
+
+	fmt.Println("..............................................................")
+
+	bills := execises11.NewBill()
+	fmt.Println(bills)
+
+	fmt.Println("..............................................................")
+
+	myBil := execises11.NewBill()
+	myUnit := execises11.Unit()
+
+	items := execises11.AddItem(myBil, myUnit, "carrot", "dozen")
+
+	fmt.Println(items)
+
+	fmt.Println("..............................................................")
+	myBl := execises11.NewBill()
+	myUt := execises11.Unit()
+
+	remove := execises11.RemoveItem(myBl, myUt, "carrot", "dozen")
+
+	fmt.Println(remove)
+
+	fmt.Println("..............................................................")
+
+	bill := map[string]int{"carrot": 12, "grapes": 3}
+
+	qty, ok := execises11.GetItem(bill, "carrot")
+
+	fmt.Println("output:", qty)
+
+	fmt.Println("output:", ok)
+
+	fmt.Println(".....................'EXE 12 STARTS'.........................................")
+
+	chessedBoard := map[string]int{"A": 6, "B": 6, "C": 5, "D": 4}
+
+	countRank := execises12.CountInRank(chessedBoard, "A")
+
+	fmt.Println(countRank)
+
+	fmt.Println("..............................................................")
+
+	Board := map[int]int{2: 5, 3: 4, 4: 4, 5: 3, 6: 2, 7: 1, 8: 0}
+
+	countinfile := execises12.CounterInFile(Board, 2)
+
+	fmt.Println(countinfile)
+
+	fmt.Println("..............................................................")
+
+	chessed := map[string]int{"A": 6, "B": 6, "C": 5, "D": 4, "E": 3, "F": 2, "G": 1, "H": 0}
+
+	count := execises12.CountAll(chessed)
+
+	fmt.Println(count)
+
+	fmt.Println("..............................................................")
+
+	chessedB := map[string]int{"A": 3, "B": 1, "C": 1, "D": 0, "E": 2, "F": 0, "G": 1, "H": 7}
+
+	CountOccupied := execises12.CountOccupied(chessedB)
+
+	fmt.Println(CountOccupied)
 }
