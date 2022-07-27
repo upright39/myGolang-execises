@@ -7,6 +7,9 @@ import (
 	"myExecises/execises10"
 	"myExecises/execises11"
 	"myExecises/execises12"
+	"myExecises/execises13"
+	"myExecises/execises14"
+	"myExecises/execises15"
 	"myExecises/execises2"
 	"myExecises/execises3"
 	"myExecises/execises4"
@@ -253,4 +256,110 @@ func main() {
 	CountOccupied := execises12.CountOccupied(chessedB)
 
 	fmt.Println(CountOccupied)
+
+	fmt.Println("......................EXE 13 STARTS........................................")
+
+	speed := 5
+	batteryDrain := 2
+
+	new_car := execises13.NewCar(speed, batteryDrain)
+
+	fmt.Printf("NewCars:%v\n", new_car)
+
+	fmt.Println("..............................................................")
+
+	destance := 800
+	Track := execises13.NewTrack(destance)
+
+	fmt.Printf("Track Destance: %v\n", Track)
+
+	fmt.Println("..............................................................")
+	newCars := execises13.NewCar(speed, batteryDrain)
+	drive := execises13.Drive(newCars)
+	fmt.Println(drive)
+
+	fmt.Println("...................................................................................")
+	speeds := 5
+	batteryDrains := 2
+	nCar := execises13.NewCar(speeds, batteryDrains)
+
+	dest := 100
+	tracks := execises13.NewTrack(dest)
+
+	CarFinish := execises13.CarFinish(nCar, tracks)
+
+	fmt.Println(CarFinish)
+	fmt.Println("......................EXE 13 ENDS........................................")
+	fmt.Println("......................EXE 14 START HERE........................................")
+
+	spds := 5
+	batteryD := 2
+
+	car := execises14.NewCar(spds, batteryD)
+
+	fmt.Printf("car is now car: %v\n", car.Drive())
+
+	fmt.Println("'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''")
+
+	dist := car.DesplayDistance()
+	fmt.Println(dist)
+
+	fmt.Println("'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''")
+
+	desplayBattery := car.DesplayBattery()
+
+	fmt.Println(desplayBattery)
+
+	fmt.Println("''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''")
+	trackDis := 100
+	carFinish := car.CanFinish(trackDis)
+	fmt.Println(carFinish)
+
+	fmt.Println("......................EXE 14 ENDS HERE........................................")
+
+	fmt.Println("......................EXE 15 STARTS HERE........................................")
+
+	initialVote := 2
+
+	// var counter *int
+	var counter = execises15.NewVoteCounter(initialVote)
+
+	fmt.Println(*counter == initialVote)
+
+	fmt.Println("''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''")
+
+	votes := 3
+
+	// var VoteCounter *int
+	var VoteCounter = &votes
+
+	fmt.Println(execises15.VoteCount(VoteCounter))
+
+	fmt.Println("''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''")
+
+	execises15.IncrementVoteCount(VoteCounter, 2)
+	fmt.Println(votes == 5)
+	fmt.Println(*VoteCounter == 5)
+
+	fmt.Println("''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''")
+
+	result := execises15.NewElectionResult("peter", 3)
+	fmt.Println(result.Name == "peter")
+	fmt.Println(result.Votes == 3)
+
+	fmt.Println("''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''")
+
+	var results = &execises15.ElectionResult{Name: "john", Votes: 32}
+
+	desplayResult := execises15.DesplayResult(results)
+	fmt.Println(desplayResult)
+
+	fmt.Println("''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''")
+
+	var finalResult = map[string]int{"john": 51, "mary": 10}
+
+	execises15.DecrementVotesOfCandidate(finalResult, "mary")
+
+	fmt.Println(finalResult["mary"])
+
 }
