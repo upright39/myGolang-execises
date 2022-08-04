@@ -10,6 +10,7 @@ import (
 	"myExecises/execises13"
 	"myExecises/execises14"
 	"myExecises/execises15"
+	"myExecises/execises16"
 	"myExecises/execises2"
 	"myExecises/execises3"
 	"myExecises/execises4"
@@ -361,5 +362,57 @@ func main() {
 	execises15.DecrementVotesOfCandidate(finalResult, "mary")
 
 	fmt.Println(finalResult["mary"])
+
+	fmt.Println("......................EXE 16 STARTS........................................")
+	names := "mattew sanabria"
+	ages := 29
+	addresss := map[string]string{"street": "main st."}
+
+	newResident := execises16.NewResident(names, ages, addresss)
+	fmt.Println(newResident)
+
+	fmt.Println("''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''")
+
+	my_names := "mattew sanabria"
+	my_ages := 4
+	my_addresss := make(map[string]string)
+
+	//    or
+	// my_addresss := map[string]string{}
+
+	newRes := execises16.NewResident(my_names, my_ages, my_addresss)
+
+	fmt.Println(newRes.HasRequiredInfo())
+
+	fmt.Println("''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''")
+
+	my_name := "mattew sanabria"
+	my_age := 4
+	my_addres := map[string]string{"street": "16 eberi omuma"}
+
+	newResi := execises16.NewResident(my_name, my_age, my_addres)
+
+	newResi.Delete()
+
+	fmt.Println(newResi)
+
+	fmt.Println("''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''")
+
+	name1 := "upright man"
+	age1 := 45
+	address1 := map[string]string{"street": "no 16 aba road"}
+
+	resident1 := execises16.NewResident(name1, age1, address1)
+
+	name2 := "upright man"
+	age2 := 45
+	address2 := map[string]string{}
+
+	resident2 := execises16.NewResident(name2, age2, address2)
+
+	residents := []*execises16.Resident{resident1, resident2}
+
+	t := execises16.Count(residents)
+	fmt.Println(t)
 
 }
