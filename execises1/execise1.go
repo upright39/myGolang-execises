@@ -16,7 +16,7 @@ func PreparationTime(numberOfLayers int) int {
 	return eachLayerInMinutes * numberOfLayers
 }
 
-//ElapsedTime function takes in two paramiters and return and integerwith is the duration of time.
+//ElapsedTime function takes in two paramiters and return and integer with is the duration of time.
 func ElapsedTime(numberOfLayers, actualMinutesInOven int) int {
 	sumOfPreparatintime := numberOfLayers * 2
 

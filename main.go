@@ -11,6 +11,7 @@ import (
 	"myExecises/execises14"
 	"myExecises/execises15"
 	"myExecises/execises16"
+	"myExecises/execises17"
 	"myExecises/execises2"
 	"myExecises/execises3"
 	"myExecises/execises4"
@@ -18,6 +19,7 @@ import (
 	"myExecises/execises7"
 	"myExecises/execises8"
 	"myExecises/execises9"
+	"time"
 )
 
 func main() {
@@ -378,7 +380,7 @@ func main() {
 	my_addresss := make(map[string]string)
 
 	//    or
-	// my_addresss := map[string]string{}
+	//my_addresss := map[string]string{}
 
 	newRes := execises16.NewResident(my_names, my_ages, my_addresss)
 
@@ -412,7 +414,59 @@ func main() {
 
 	residents := []*execises16.Resident{resident1, resident2}
 
-	t := execises16.Count(residents)
-	fmt.Println(t)
+	countNum := execises16.Count(residents)
+	fmt.Println(countNum)
+	fmt.Println("'''''''''''''''''''''''''''''''''EXE 17 ON CHANNEL'''''''''''''''''''''''''''''''''''''''''''''''''")
 
+	done := make(chan bool)
+	go execises17.Hello(done)
+	<-done
+	fmt.Println("main function")
+
+	fmt.Println("''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''")
+
+	mydone := make(chan bool)
+
+	fmt.Println("the main is going to call the chantuto go routine")
+	go execises17.MyHello(mydone)
+
+	<-mydone
+	fmt.Println("main receives data ")
+
+	fmt.Println("''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''")
+
+	number := 123
+	sqrch := make(chan int)
+
+	cubech := make(chan int)
+
+	go execises17.CalcSquares(number, sqrch)
+
+	go execises17.CalcCubes(number, cubech)
+
+	squares, cubes := <-sqrch, <-cubech
+
+	fmt.Println("Final output", squares+cubes)
+
+	fmt.Println("''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''")
+
+	myCounts := make(chan int)
+
+	go execises17.Mycount(myCounts)
+
+	for v := range myCounts {
+
+		fmt.Println("Receive", v)
+	}
+
+	fmt.Println("''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''")
+
+	ch := make(chan int, 2)
+	go execises17.Write(ch)
+	time.Sleep(2 * time.Second)
+
+	for v := range ch {
+		fmt.Println("read value", v, "from ch")
+		time.Sleep(2 * time.Second)
+	}
 }

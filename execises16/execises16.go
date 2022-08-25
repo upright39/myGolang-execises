@@ -12,12 +12,12 @@ type Resident struct {
 
 func NewResident(name string, age int, address map[string]string) *Resident {
 
-	return &Resident{
+	newR := &Resident{
 		name:    name,
 		age:     age,
 		address: address,
 	}
-
+	return newR
 }
 
 //HasRequieredInfo determins if a given resident has all of the required informations.
@@ -28,7 +28,6 @@ func (r *Resident) HasRequiredInfo() bool {
 	} else {
 		return false
 	}
-
 }
 
 // Deletes deletes a resident's infomation.
